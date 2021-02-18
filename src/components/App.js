@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import likeButton from '../images/like-button.svg';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 
@@ -11,6 +10,8 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({})
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -24,10 +25,17 @@ function App() {
     setIsAddPlacePopupOpen(true);
   }
 
+  function handleCardClick(card) {
+    setIsImagePopupOpen(true);
+    setSelectedCard(card);
+  }
+
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
+    setIsImagePopupOpen(false);
+    setSelectedCard({});
   }
 
   return (
@@ -39,6 +47,7 @@ function App() {
         onEditProfile={handleEditProfileClick}
         onAddPlace={handleAddPlaceClick}
         onEditAvatar={handleEditAvatarClick}
+        onCardClick={handleCardClick}
       />
 
       <Footer />
@@ -102,22 +111,12 @@ function App() {
         )}
       />
 
-      <ImagePopup />
+      <ImagePopup
+        isOpen={isImagePopupOpen}
+        onClose={closeAllPopups}
+        card={selectedCard}
+      />
 
-      <template id="card-template">
-        <div class="cards__item">
-          <img class="cards__image" src="https://cdn130.picsart.com/307655146346211.png" alt="Изображение" />
-          <button class="cards__remove-button" type="button">
-          </button>
-          <div class="cards__description">
-            <h2 class="cards__title"></h2>
-            <div class="cards__like-container">
-              <img src={likeButton} class="cards__like-button" alt="Лайк" />
-              <span class="cards__like-number">0</span>
-            </div>
-          </div>
-        </div>
-      </template>
     </div>
   );
 }
