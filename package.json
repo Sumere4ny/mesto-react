@@ -1,6 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
+  "description": "Одностраничное приложение с карточками (фотографиями) рекомендуемых для посещения интересных мест.",
   "homepage": "https://sumere4ny.github.io/mesto-react",
   "private": true,
   "dependencies": {
@@ -11,6 +12,11 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
+  },
+  "author": {
+    "name": "Pavel Kiselev",
+    "email": "sumere4ny@gmail.com",
+    "url": "https://sumere4ny.github.io/"
   },
   "scripts": {
     "start": "react-scripts start",

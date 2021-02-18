@@ -9,7 +9,7 @@ function ImagePopup({ card, isOpen, onClose }) {
             type="button"
             onClick={onClose}
             ariaLabel="Закрыть"
-          ></button>
+          />
           <img className="lightbox__image"
             src={card.link} alt={card.name} />
           <h2 className="lightbox__image-title">{card.name}</h2>

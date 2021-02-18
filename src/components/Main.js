@@ -45,11 +45,11 @@ function Main(props) {
           <div className="profile__info">
             <div className="profile__title">
               <h1 className="profile__name">{userName}</h1>
-              <button className="profile__edit-button" onClick={props.onEditProfile} type="button"></button>
+              <button className="profile__edit-button" onClick={props.onEditProfile} type="button" />
             </div>
             <p className="profile__profession">{userDescription}</p>
           </div>
-          <button className="profile__add-button" onClick={props.onAddPlace} type="button"></button>
+          <button className="profile__add-button" onClick={props.onAddPlace} type="button" />
         </section>
 
         <section className="cards">
