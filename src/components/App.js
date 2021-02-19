@@ -56,8 +56,7 @@ function App() {
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
         name="edit-profile"
-        title="Редактировать профиль"
-        children={(
+        title="Редактировать профиль">
           <>
             <input type="text" className="popup__input popup__input_name-field" id="name"
                 name="name" minlength="2" maxlength="40" required />
@@ -67,30 +66,26 @@ function App() {
             <span id='profession-error' className='popup__input-error'></span>
             <button type="submit" className="popup__submit">Сохранить</button>
           </>
-        )}
-      />
+      </PopupWithForm>
 
       <PopupWithForm
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}
         name="edit-avatar"
-        title="Обновить аватар"
-        children={(
+        title="Обновить аватар">
           <>
             <input type="url" className="popup__input popup__input_avatar-link" id="avatar-link"
               name="link" placeholder="Ссылка на картинку" required />
             <span id='avatar-link-error' className='popup__input-error'></span>
             <button type="submit" className="popup__submit">Сохранить</button>
           </>
-        )}
-      />
+      </PopupWithForm>
 
       <PopupWithForm
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}
         name="add-new-card"
-        title="Новое место"
-        children={(
+        title="Новое место">
           <>
             <input type="text" className="popup__input popup__input_place-name" id="place-name"
               name="name" placeholder="Название" minlength="2" maxlength="30" required />
@@ -100,16 +95,14 @@ function App() {
             <span id='place-link-error' className='popup__input-error'></span>
             <button type="submit" className="popup__submit">Создать</button>
           </>
-        )}
-      />
+      </PopupWithForm>
+
 
       <PopupWithForm
         name="delete-card"
-        title="Вы уверены"
-        children={(
+        title="Вы уверены">
           <button type="submit" className="popup__submit popup__submit-confirm">Да</button>
-        )}
-      />
+      </PopupWithForm>
 
       <ImagePopup
         isOpen={isImagePopupOpen}
