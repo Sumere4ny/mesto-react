@@ -13,6 +13,14 @@ function EditProfilePopup(props) {
     setDescription(currentUser.about);
   }, [currentUser]);
 
+  function handleNameChange(e) {
+    setName(e.target.value)
+  }
+
+  function handleDescriptionChange(e) {
+    setDescription(e.target.value)
+  }
+
   function handleSubmit(e) {
     // Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
@@ -32,10 +40,12 @@ function EditProfilePopup(props) {
       name="edit-profile"
       title="Редактировать профиль">
       <input type="text" className="popup__input popup__input_name-field" id="name"
-        name="name" minLength="2" maxLength="40" required />
+        name="name" minLength="2" maxLength="40" value={name}
+        onChange={handleNameChange} required />
       <span id='name-error' className='popup__input-error'></span>
       <input type="text" className="popup__input popup__input_profession" id="profession"
-        name="about" minLength="2" maxLength="200" required />
+        name="about" minLength="2" maxLength="200" value={description}
+        onChange={handleDescriptionChange} required />
       <span id='profession-error' className='popup__input-error'></span>
       <button type="submit" className="popup__submit">Сохранить</button>
     </PopupWithForm>
