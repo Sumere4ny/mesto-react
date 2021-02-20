@@ -30,7 +30,6 @@ function EditProfilePopup(props) {
       name,
       about: description,
     });
-    e.target.reset();
   }
 
   return(

@@ -12,7 +12,6 @@ function AddPlacePopup(props) {
       name: inputName.current.value,
       link: inputLink.current.value
     });
-    e.target.reset();
   }
 
   return(

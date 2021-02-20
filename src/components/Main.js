@@ -23,10 +23,13 @@ function Main(props) {
         </section>
 
         <section className="cards">
-          {props.cards.map(item => <Card key={item._id} card={item}
-            onClick={props.onCardClick}
-            onCardLike={props.onCardLike}
-            onCardDelete={props.onCardDelete}/>)}
+          {props.cards.map(item =>
+            (<Card key={item._id} card={item}
+              onClick={props.onCardClick}
+              onCardLike={props.onCardLike}
+              onCardDelete={props.onCardDelete}
+            />)
+          )}
         </section>
     </main>
   );
