@@ -8,7 +8,7 @@ function ImagePopup({ card, isOpen, onClose }) {
             className="popup__close-button"
             type="button"
             onClick={onClose}
-            ariaLabel="Закрыть"
+            aria-label="Закрыть"
           />
           <img className="lightbox__image"
             src={card.link} alt={card.name} />
