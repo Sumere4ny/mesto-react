@@ -1,18 +1,18 @@
 import React from 'react';
 
-function ImagePopup({ card, isOpen, onClose }) {
+function ImagePopup(props) {
   return (
-    <div className={`popup ${isOpen && 'popup_opened'} popup_type_lightbox`}>
+    <div className={`popup ${props.isOpen && 'popup_opened'} popup_type_lightbox`}>
       <div className="lightbox">
           <button
             className="popup__close-button"
             type="button"
-            onClick={onClose}
+            onClick={props.onClose}
             aria-label="Закрыть"
           />
           <img className="lightbox__image"
-            src={card.link} alt={card.name} />
-          <h2 className="lightbox__image-title">{card.name}</h2>
+            src={props.card.link} alt={props.card.name} />
+          <h2 className="lightbox__image-title">{props.card.name}</h2>
       </div>
     </div>
   );
