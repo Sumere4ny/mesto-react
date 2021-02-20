@@ -9,6 +9,7 @@ import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import api from '../utils/Api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import avatar from '../images/avatar.jpg';
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
   const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState({
     link: '',
-    name: ''
+    name: '',
+    avatar: avatar
   });
   const [currentUser, setCurrentUser] = React.useState({
     name: '',
